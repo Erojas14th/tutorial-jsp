@@ -10,4 +10,5 @@ public interface PersonaDAO {
 	void deleteById(Integer id);
 	void save(Persona persona);
 	void update(Persona persona);
+	int generateId();
 }

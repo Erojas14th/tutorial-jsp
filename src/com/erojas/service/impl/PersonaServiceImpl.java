@@ -43,5 +43,10 @@ public class PersonaServiceImpl implements PersonaService{
 		
 		dao.update(persona);
 	}
+	@Override
+	public int generateId() {
+		// TODO Auto-generated method stub
+		return dao.generateId();
+	}
 
 }

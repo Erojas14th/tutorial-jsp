@@ -10,6 +10,7 @@ import java.util.List;
 
 import com.erojas.model.Persona;
 import com.erojas.util.Conexion;
+import com.sun.corba.se.spi.orbutil.fsm.State;
 
 public class PersonaDAOImpl implements PersonaDAO {
 
@@ -115,6 +116,27 @@ public class PersonaDAOImpl implements PersonaDAO {
 			e.printStackTrace();
 		}
 
+	}
+
+
+	@Override
+	public int generateId() {
+		String sql = "select id from persona";
+		int nuevoCodigo=0;
+		try {
+			Statement st = cn.createStatement();
+			ResultSet rs= st.executeQuery(sql);
+			
+			while(rs.next()) {
+				nuevoCodigo=rs.getInt("id");
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return nuevoCodigo++;
 	}
 
 }

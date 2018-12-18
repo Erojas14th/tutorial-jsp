@@ -33,9 +33,6 @@ public class App {
 		 * Persona persona = new Persona(5,"Pepelucho"); dao.update(persona); Persona
 		 * persona2=dao.getOne(5); System.out.println(persona2.getNombre());
 		 */
-		Persona persona = new Persona(5, "Edgar");
-		dao.update(persona);
-		Persona persona2 = dao.getOne(5);
-		System.out.println(persona2.getNombre());
+			
 	}
 }
